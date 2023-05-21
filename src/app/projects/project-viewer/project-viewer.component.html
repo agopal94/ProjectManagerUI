@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="'/home'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{project?.pname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-segment value="default">
+    <ion-segment-button (click)="segmentChange('overview')" value="default">
+      <ion-label>Overview</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="segmentChange('tasks')" value="segment">
+      <ion-label>Tasks</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div style="padding-top: 20px;" *ngIf="contentView === 'overview'">
+    <ion-text>
+      <h1>{{project?.pdesc}}</h1>
+    </ion-text>
+    <ion-item-divider>
+    </ion-item-divider>
+    <ion-text>
+      <h4><ion-badge color="danger">11</ion-badge><span class="badge-text">Pending Tasks</span></h4>
+      <h4><ion-badge color="success">11</ion-badge><span class="badge-text">Completed Tasks</span></h4>
+      <h4><ion-badge color="warning">11</ion-badge><span class="badge-text">New Tasks</span></h4>
+    </ion-text>
+  </div>
+  <div style="padding-top: 20px;" *ngIf="contentView === 'tasks'">
+    Tasks
+  </div>
+</ion-content>

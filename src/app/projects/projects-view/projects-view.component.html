@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Projects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <span *ngFor="let project of projects">
+    <ion-card (click)="loadProject($event, project.pid)" [button]="true">
+      <ion-card-header>
+        <ion-card-title>{{project.pname}}</ion-card-title>
+        <ion-card-subtitle>Total Tasks</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{project.pdesc}}
+      </ion-card-content>
+    </ion-card>
+  </span>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ProjectManagerUI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
